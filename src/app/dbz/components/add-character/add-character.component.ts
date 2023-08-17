@@ -11,4 +11,15 @@ export class AddCharacterComponent {
     name:'',
     power: 0
   };
+
+  // Métodos
+  emitCharacter(): void {
+    console.log(this.character);
+
+
+    // Limpia el formulario
+    this.character.name = '';
+    this.character.power = 0;
+  }
+
 }
