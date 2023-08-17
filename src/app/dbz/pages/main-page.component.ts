@@ -22,6 +22,7 @@ export class MainPageComponent {
     power: 7500
   }];
 
+  // Agrega un personaje al listado
   onNewCharacter(character: Character): void {
     this.characters.push(character);
   }
