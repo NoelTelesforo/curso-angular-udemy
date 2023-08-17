@@ -14,7 +14,7 @@ export class MainPageComponent {
     power: 1000
   },
   {
-    name: 'goku',
+    name: 'Goku',
     power: 9500
   },
   {
@@ -23,8 +23,7 @@ export class MainPageComponent {
   }];
 
   onNewCharacter(character: Character): void {
-    console.log('Mi page');
-    console.log(character);
+    this.characters.push(character);
   }
 
 }
