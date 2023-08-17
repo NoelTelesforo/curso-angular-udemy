@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 @Component({
@@ -7,6 +7,10 @@ import { Character } from '../../interfaces/character.interface';
   styleUrls: ['./add-character.component.css']
 })
 export class AddCharacterComponent {
+
+  @Output()
+  onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
   character: Character = {
     name:'',
     power: 0
@@ -16,6 +20,9 @@ export class AddCharacterComponent {
   emitCharacter(): void {
     console.log(this.character);
 
+    if(this.character.name.length === 0) return;
+
+    this.onNewCharacter.emit(this.character);
 
     // Limpia el formulario
     this.character.name = '';
