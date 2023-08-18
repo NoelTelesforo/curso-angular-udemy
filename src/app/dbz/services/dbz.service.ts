@@ -22,7 +22,7 @@ export class DbzService {
   }];
 
   // Agrega un personaje al listado
-  onNewCharacter(character: Character): void {
+  addCharacter(character: Character): void {
 
     const newCharacter: Character = {id: uuid(), ...character};
 
