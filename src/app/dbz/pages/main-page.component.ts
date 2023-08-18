@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Character } from '../interfaces/character.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-dbz-main-page',
@@ -8,27 +8,9 @@ import { Character } from '../interfaces/character.interface';
 
 export class MainPageComponent {
 
-  // Arreglo de personajes
-  characters: Character[] = [{
-    name: 'Krillin',
-    power: 1000
-  },
-  {
-    name: 'Goku',
-    power: 9500
-  },
-  {
-    name: 'Vegeta',
-    power: 7500
-  }];
+  // Se inyecta dbz service. Habilita en todo el componente del main page
+  // toda la información que este siendo utilizada en el servicio.
+  constructor(public dbzService: DbzService) {
 
-  // Agrega un personaje al listado
-  onNewCharacter(character: Character): void {
-    this.characters.push(character);
   }
-
-  onDeleteCharacter(index:number) {
-    this.characters.splice(index, 1);
-  }
-
 }
