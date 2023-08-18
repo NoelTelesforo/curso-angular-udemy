@@ -30,8 +30,12 @@ export class DbzService {
   }
 
   // Elimina un personaje de la lista
-  onDeleteCharacter(index:number) {
-    this.characters.splice(index, 1);
+  // onDeleteCharacter(index:number) {
+  //   this.characters.splice(index, 1);
+  // }
+
+  deleteCharacterById(id:string) {
+    this.characters = this.characters.filter(character => character.id !== id);
   }
 
 
